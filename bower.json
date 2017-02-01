@@ -1,0 +1,20 @@
+{
+  "name": "medium-editor-gem",
+  "authors": [
+    "Michael Lang <mwlang@cybrains.net>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "medium-editor": "^5.22.2"
+  }
+}
