@@ -22,7 +22,7 @@ module MediumEditor
 
     def clear_plugin_assets
       File.write "vendor/assets/javascripts/medium-editor-plugins.js", ""
-      File.write "vendor/assets/javascripts/medium-editor-plugins.css", ""
+      File.write "vendor/assets/stylesheets/medium-editor-plugins.css", ""
     end
   end
 end
