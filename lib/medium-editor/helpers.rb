@@ -9,20 +9,20 @@ module MediumEditor
     end
 
     def require_plugin_assets js, css
-      File.open("vendor/assets/javascripts/medium-editor-plugins.js", "w") do |file|
+      File.open(PLUGINS_JS_FILE, "w") do |file|
         js.each {|path| file.puts "//= require #{path}" }
       end
-      File.open("vendor/assets/stylesheets/medium-editor-plugins.css", "w") do |file|
+      File.open(PLUGINS_CSS_FILE, "w") do |file|
         css.each {|path| file.puts "/*= require #{path} */" }
       end
 
-      p File.read "vendor/assets/javascripts/medium-editor-plugins.js"
-      p File.read "vendor/assets/stylesheets/medium-editor-plugins.css"
+      p File.read PLUGINS_JS_FILE
+      p File.read PLUGINS_CSS_FILE
     end
 
     def clear_plugin_assets
-      File.write "vendor/assets/javascripts/medium-editor-plugins.js", ""
-      File.write "vendor/assets/stylesheets/medium-editor-plugins.css", ""
+      File.delete PLUGINS_JS_FILE if File.exist?(PLUGINS_JS_FILE)
+      File.delete PLUGINS_CSS_FILE if File.exist?(PLUGINS_CSS_FILE)
     end
   end
 end
